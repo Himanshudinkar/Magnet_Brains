@@ -37,7 +37,7 @@ User Panel:
 How to Run This Application
 
 1. Clone the Repository
-git clone https://github.com/your-username/ecommerce.git
+git clone https://github.com/Himanshudinkar/Magnet_Brains
 cd ecommerce
 
 2. Setup Backend
@@ -47,9 +47,8 @@ npm install
 Create a `.env` file inside /server with the following:
 
 PORT=8080  
-MONGO_URL=your_mongodb_connection_string  
-STRIPE_SECRET_KEY=your_stripe_secret_key  
-FRONTEND_URL=http://localhost:5173
+MONGO_URL= find in.env fil
+STRIPE_SECRET_KEY= find in.env fil
 
 Start the backend
 npm start
