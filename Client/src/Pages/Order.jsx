@@ -12,7 +12,7 @@ const Order = () => {
         const response = await axios.get("http://localhost:8080/payment/order");
         setOrders(response.data);
       } catch (error) {
-        console.error("Failed to fetch orders:", error.message);
+        console.error("Failed to fetch orders");
       }
     };
 
@@ -21,7 +21,7 @@ const Order = () => {
 
   return (
     <div className="container mt-5">
-      <h2 className="mb-4 text-center text-white">📦 All Orders</h2>
+      <h2 className="mb-4 text-center text-white"> All Orders</h2>
       
         <Table striped bordered hover variant="dark" responsive>
           <thead>
@@ -58,7 +58,7 @@ const Order = () => {
         </Table>
      
     </div>
-  );
-};
+  )
+}
 
-export default Order;
+export default Order

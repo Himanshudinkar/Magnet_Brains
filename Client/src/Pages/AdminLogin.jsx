@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { FaUserShield, FaLock } from "react-icons/fa";
+import "../css/AdminLogin.css"
 
 const AdminLogin = () => {
   const [input, setInput] = useState({});

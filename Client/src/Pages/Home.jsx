@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux"
 import { addtocart } from "../cartSlice"
 import { MdShoppingBag } from "react-icons/md"
 import { FaStar } from "react-icons/fa"
+import "../css/Home.css"
 
 const Home = () => {
   const [mydata, setMydata] = useState([]);
@@ -47,7 +48,7 @@ const Home = () => {
             />
             <Card.Body>
               <Card.Title className="product-name">
-                {item.name} <FaStar className="star-icon" />
+                {item.name} 
               </Card.Title>
               <Card.Text className="product-desc">{item.description}</Card.Text>
               <div className="product-meta">
@@ -57,20 +58,9 @@ const Home = () => {
               <Button
                 variant="info"
                 className="add-btn"
-                onClick={() =>
-                  dispatch(
-                    addtocart({
-                      id: item._id,
-                      name: item.name,
-                      description: item.description,
-                      brand: item.brand,
-                      price: item.price,
-                      image: item.image,
-                      qunty: 1,
-                    })
-                  )
-                }
+                onClick={() =>dispatch(addtocart({id: item._id,name: item.name,description: item.description,brand: item.brand,price: item.price,image: item.image,qunty: 1,}))}
               >
+
                 Add to Cart
               </Button>
             </Card.Body>
@@ -78,6 +68,7 @@ const Home = () => {
         ))}
       </div>
     </div>
+    
     </>
   )
 }

@@ -1,3 +1,4 @@
+import "../css/Footer.css"
 
 const Footer = () => {
     return (
@@ -9,7 +10,7 @@ const Footer = () => {
                 <p className="footer-link">www.watchecommerce.com</p>
             </div>
             <div className="footer-bottom">
-                <p>&copy; {new Date().getFullYear()} Watch E-Commerce. All Rights Reserved.</p>
+                <p>&copy; 2025 Watch E-Commerce. All Rights Reserved.</p>
             </div>
         </footer>
         </>
