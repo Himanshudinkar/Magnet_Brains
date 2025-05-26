@@ -7,7 +7,7 @@ const checkout = async (req,res) =>{
     const stripe = Stripe(process.env.SECRATE_KEY); 
     const { items,emailid } = req.body;
 
-    
+     console.log(req.body)
   
     try {
       const lineItems = items.map((item) => ({
@@ -41,7 +41,7 @@ const saveorder = async (req,res) =>{
 
     const { products,emailid } = req.body;
 
-  
+   
 
     try {
       const processedProducts = products.map((item) => ({
@@ -80,8 +80,11 @@ const order = async (req, res) => {
 
 
 
+
+
 module.exports = {
     checkout,
     saveorder,
-    order
+    order,
+
 }

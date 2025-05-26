@@ -20,7 +20,7 @@ const CartData = () => {
 
   const [email,setEmail] = useState("")
 
-  console.log(email)
+  
   
 
   const handleCheckout = async () => {
@@ -34,14 +34,15 @@ const CartData = () => {
           price: item.price,
          
         })),
+        
     });
 
       localStorage.setItem("emailid",email)
       const session = response.data;
-      const result = await stripe.redirectToCheckout({
+      const result = await stripe.redirectToCheckout({ 
         sessionId: session.id,
-
-      });
+      
+      }  );
 
       
       if (result.error) {

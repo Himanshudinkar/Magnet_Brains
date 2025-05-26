@@ -11,6 +11,8 @@ const Success = () => {
 
     const navigate = useNavigate();
 
+    
+
      const saveOrder = async () => {
       try {
         await axios.post("http://localhost:8080/payment/saveorder", {
@@ -19,7 +21,8 @@ const Success = () => {
             price: item.price,
             quantity: item.qunty,
           })),
-          emailid:localStorage.getItem("emailid")
+          emailid:localStorage.getItem("emailid"),
+         
         });
 
         console.log("All orders saved successfully");
