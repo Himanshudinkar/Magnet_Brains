@@ -1,0 +1,54 @@
+.top-navbar {
+    padding: 12px 0;
+    background-color: #0c1c24 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  }
+  
+  .brand-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .brand-icon {
+    font-size: 26px;
+    color: #66ccff;
+  }
+  
+  .brand-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff !important;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart-wrapper {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .cart-icon {
+    font-size: 24px;
+    color: #ffffff;
+    transition: color 0.3s ease;
+  }
+  
+  
+  
+  .cart-count {
+    position: absolute;
+    top: -6px;
+    right: -12px;
+    background-color: #ff4d4f;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+  }
+  
