@@ -8,6 +8,7 @@ import AddProduct from './Pages/AddProduct'
 import CartData from './CartData'
 import Success from './Success'
 import Order from './Pages/Order'
+import Cancel from './Cancel'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
       <Route path='/home' element = {<Home/>}/>
       <Route path='/cartdata' element = {<CartData/>} />
       <Route path='/success' element = {<Success/>}/>
+      <Route path='/cancel' element = {<Cancel/>} />
       </Route>
 
     </Routes>

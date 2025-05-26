@@ -10,6 +10,7 @@ const orderSchema = new mongoose.Schema({
     },
   ],
   totalAmount: Number,
+  emailid:String,
   createdAt: {
     type: Date,
     default: Date.now,

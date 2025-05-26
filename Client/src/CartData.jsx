@@ -4,10 +4,10 @@ import { MdDelete } from "react-icons/md";
 import { productremove, quntydecrese, quntyincrese } from "./cartSlice";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { useState } from "react";
+import { use, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
-
+import "./css/CartData.css"
 const CartData = () => {
   const product = useSelector((state) => state.mycart.cart);
   const dispatch = useDispatch();
@@ -18,6 +18,10 @@ const CartData = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [email,setEmail] = useState("")
+
+  console.log(email)
+  
 
   const handleCheckout = async () => {
     const stripe = await loadStripe("pk_test_51ROZvjQOYyecGieYq6V9TSPevVTj8BEhomR0lT7sEWLpL74sFHFwuEbuZzAd6t5cy2zNZjOAFz1jOWrBxPTxt6V900uAvOZFHv"); 
@@ -28,14 +32,18 @@ const CartData = () => {
           name: item.name,
           quantity: item.qunty,
           price: item.price,
+         
         })),
-      });
+    });
 
+      localStorage.setItem("emailid",email)
       const session = response.data;
       const result = await stripe.redirectToCheckout({
         sessionId: session.id,
+
       });
 
+      
       if (result.error) {
         console.error(result.error.message);
       }
@@ -108,7 +116,7 @@ const CartData = () => {
           <Modal.Title>Enter Your Email:</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <input type="text" name="" id="" placeholder="Enter Your Email" style={{paddingRight:"260px"}} />
+            <input type="text" name="email"  placeholder="Enter Your Email" style={{paddingRight:"260px"}} onChange={(e)=>{setEmail(e.target.value)}} />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

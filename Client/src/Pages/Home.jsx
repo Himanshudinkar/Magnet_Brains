@@ -58,7 +58,8 @@ const Home = () => {
               <Button
                 variant="info"
                 className="add-btn"
-                onClick={() =>dispatch(addtocart({id: item._id,name: item.name,description: item.description,brand: item.brand,price: item.price,image: item.image,qunty: 1,}))}
+                onClick={() =>dispatch(addtocart({id: item._id,name: item.name,description: item.description,brand: item.brand,price: item.price,image: item.image,qunty: 1,}))
+}
               >
 
                 Add to Cart

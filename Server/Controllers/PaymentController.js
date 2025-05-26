@@ -5,7 +5,9 @@ require("dotenv").config()
 const checkout = async (req,res) =>{
 
     const stripe = Stripe(process.env.SECRATE_KEY); 
-    const { items } = req.body;
+    const { items,emailid } = req.body;
+
+    
   
     try {
       const lineItems = items.map((item) => ({
@@ -37,7 +39,9 @@ const checkout = async (req,res) =>{
 
 const saveorder = async (req,res) =>{
 
-    const { products } = req.body;
+    const { products,emailid } = req.body;
+
+  
 
     try {
       const processedProducts = products.map((item) => ({
@@ -55,6 +59,7 @@ const saveorder = async (req,res) =>{
       const order = await orderSchema.create({
         products: processedProducts,
         totalAmount: totalAmount,
+        emailid:emailid
       });
   
       res.status(201).json({ msg: "Order saved", order });
