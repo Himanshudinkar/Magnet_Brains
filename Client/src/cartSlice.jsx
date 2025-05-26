@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import {message} from "antd"
+import '@ant-design/v5-patch-for-react-19';
 
 const cartSlice = createSlice({
     name:"mycart",
@@ -13,7 +14,7 @@ const cartSlice = createSlice({
             const cartdata = state.cart.filter(key=>key.id == actions.payload.id)
             if(cartdata.length >= 1)
             {
-                alert("product already added")
+                message.error("product already added")
             }
             else
             {
@@ -36,7 +37,7 @@ const cartSlice = createSlice({
                 {
                    if(state.cart[i].qunty <=1)
                    {
-                    alert("qunty not less then 1")
+                    message.error("qunty not less then 1")
                    }
                    else
                    {
